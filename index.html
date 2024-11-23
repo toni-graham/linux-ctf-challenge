@@ -4,78 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Encrypted Labyrinth</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        h1 {
-            color: #333;
-        }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            max-width: 800px;
-            margin: 20px auto;
-        }
-        code {
-            background-color: #f0f0f0;
-            padding: 5px;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to The Encrypted Labyrinth CTF Challenge</h1>
-        <p>You are a new administrator for a server at a secret research lab. The lab has recently completed an important research project, but the research director left behind a cryptic encrypted message and specific instructions on how to find the research results. Your job is to uncover the hidden flag.</p>
+        <h1>The Encrypted Labyrinth CTF Challenge</h1>
+        <p>You are a new administrator for a server at a secret research lab. Your mission is to uncover the hidden flag!</p>
 
         <h2>Step 1: Access the Server</h2>
-        <p>The first step is to log into the server. Use the following credentials:</p>
+        <p>Use the following credentials to log in to the server:</p>
         <p><strong>Username</strong>: <code>researcher</code></p>
         <p><strong>Password</strong>: <code>lab@2024</code></p>
-        <p>After logging in, you'll be in the home directory of the user. You need to explore the files there to start your journey.</p>
 
-        <h2>Step 2: Investigate the Hidden File</h2>
-        <p>After logging in, use the following command to list hidden files:</p>
+        <h2>Step 2: Explore the Hidden Files</h2>
+        <p>Run the following command to see hidden files:</p>
         <pre><code>ls -la</code></pre>
-        <p>You should see a hidden file named <code>.message.txt</code>.</p>
-        <p>Inside the <code>.message.txt</code> file, you will find a cryptic message:</p>
-        <pre><code>The code lies in the puzzle of access control. Look closely at the permissions.</code></pre>
 
-        <h2>Step 3: Adjust Permissions</h2>
-        <p>To access the content of <code>.message.txt</code>, you need to adjust its permissions. Use the following command:</p>
-        <pre><code>chmod 644 .message.txt</code></pre>
-        <p>Once you change the permissions, you can read the file using:</p>
-        <pre><code>cat .message.txt</code></pre>
-        <p>The file will tell you that the flag is encrypted and a cipher key is hidden somewhere in the environment variables.</p>
+        <p>You'll find a hidden file called <code>.message.txt</code> with an encrypted message.</p>
 
-        <h2>Step 4: Find the Cipher Key</h2>
-        <p>To find the cipher key, run:</p>
-        <pre><code>env</code></pre>
-        <p>You should see a hidden environment variable:</p>
-        <pre><code>CIPHER_KEY=42</code></pre>
+        <h2>Step 3: Download the Encrypted File</h2>
+        <p>Download the encrypted message:</p>
+        <a href="https://github.com/toni-graham/linux-ctf-challenge/raw/main/.encrypted_message.txt" download>Download .encrypted_message.txt</a>
 
-        <h2>Step 5: Decrypt the Message</h2>
-        <p>The message is encrypted using a Caesar cipher. The key is <code>42</>.</p>
-        <p>The encrypted message you will find in <code>.encrypted_message.txt</code> is:</p>
-        <pre><code>Wkh jvssr xp lqzhe qeb czkpv. Wkh nbyz xlmw ql wkh wpkbzx.</code></pre>
-        <p>Decrypt the message using the Caesar cipher and the key 42. Once decrypted, you’ll get the next clue:</p>
-        <pre><code>The flag is under the desk. The key lies in the papers.</code></pre>
+        <h2>Terminal Simulation</h2>
+        <p>Type commands into the simulated terminal below:</p>
 
-        <h2>Step 6: Access the Flag</h2>
-        <p>Go to the <code>/desk</code> directory and use the following command to access it:</p>
-        <pre><code>sudo chmod 755 /desk</code></pre>
-        <p>Once you access the desk directory, look for the hidden file <code>.flag.txt</code>.</p>
-        <p>Inside <code>.flag.txt</code>, you will find the final flag:</p>
-        <pre><code>FLAG{TheEncryptedLabyrinth_FoundIt!}</code></pre>
-
-        <h2>Good Luck!</h2>
+        <div class="terminal">
+            <p class="prompt">guest@linux-challenge:~$ <span id="output"></span></p>
+            <input type="text" id="userInput" class="input-field" autofocus/>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
