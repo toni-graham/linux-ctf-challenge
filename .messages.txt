@@ -1,0 +1,13 @@
+Hello Admin,
+
+The flag you seek is hidden in a system file. Try to find it!
+
+Use the following command to view the flag:
+    cat /etc/flag.txt
+
+However, be warned. The file may not be as easy to access as it seems...
+
+Look into the file permissions and ownership, and you may need to escalate your privileges.
+
+Good luck,
+The System
